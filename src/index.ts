@@ -66,12 +66,12 @@ export const create = async (
     guild: Guild,
     options: CreateOptions = {
         backupID: null,
-        maxMessagesPerChannel: 10,
+        maxMessagesPerChannel: 350,
         jsonSave: true,
         jsonBeautify: true,
         doNotBackup: [],
         backupMembers: false,
-        saveImages: ''
+        saveImages: 'base64'
     }
 ) => {
     return new Promise<BackupData>(async (resolve, reject) => {
@@ -168,7 +168,7 @@ export const load = async (
     guild: Guild,
     options: LoadOptions = {
         clearGuildBeforeRestore: true,
-        maxMessagesPerChannel: 10
+        maxMessagesPerChannel: 350
     }
 ) => {
     return new Promise(async (resolve, reject) => {
